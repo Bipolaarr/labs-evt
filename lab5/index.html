@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <meta charset="UTF-8">
+    <title>Мои любимые фильмы</title>
+    <style>
+
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('fonts/chinazes.ttf') format('truetype');
+        }
+
+        body { 
+            width: 1440px;
+            max-width: 1440px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.5;
+            padding: 5px;
+            background-color: #fafafa;
+        }
+
+        h1 { 
+            text-align: center;
+        }
+
+        h3 {
+            font-size: medium;
+            font-weight: 100;
+            color: red;
+        }
+
+        ul { 
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li { 
+            margin: 0px;
+            padding: 10px; 
+            font-size: 20px;
+        }
+
+        img { 
+            width: 370px; 
+            height: 220px; 
+        }
+
+        table { 
+            width: 77.5%;
+            border-collapse: separate;
+            margin: 10px auto; /* Центрирование таблицы */
+            table-layout: fixed;
+            align-items: center;
+        }
+
+        th, td { 
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+            height: 20px;
+        }
+
+        .film1 {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .film2 {
+            font-family: 'Georgia', serif;
+        }
+
+        .film3 {
+            font-family: 'CustomFont';
+            font-size: 150;
+        }
+
+        .description1 {
+            text-align: center;
+        }
+
+        .description2 {
+            text-align: justify;
+            font-weight: 900;
+        }
+
+        .description3 {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1> Мои любимые фильмы </h1>
+        <ul> 
+            <li><a href="#film1" style="color: black; text-decoration: none;">Первый фильм: Оно</a></li>
+            <li><a href="#film2" style="color: black; text-decoration: none;">Второй фильм: Звонок</a></li>
+            <li><a href="#film3" style="color: black; text-decoration: none;">Третий фильм: Пила 2</a></li>
+        </ul>
+    </div>
+    <div class="film1">
+        <h2 id="film1">Фильм 1: Оно</h2>
+        <h3 class="description1"><p>Когда в городке Дерри, штат Мэн, начинают пропадать дети, несколько ребят сталкиваются со своими страхами и противостоят зловещему клоуну, чья жестокость продолжается веками.</p></h3>
+        <ul>
+            <img src="f11.jpeg" alt="Кадр из фильма 1">
+            <img src="f12.webp" alt="Кадр из фильма 1">
+            <img src="f13.webp" alt="Кадр из фильма 1">
+        </ul>
+        <table>
+            <tr>
+                <td>Год</td>
+                <td>2017</td>
+            </tr>
+            <tr>
+                <td>Страна</td>
+                <td>Сша</td>
+            </tr>
+            <tr>
+                <td>Жанр</td>
+                <td>Ужасы</td>
+            </tr>
+            <tr>
+                <td>Режиссер</td>
+                <td>Андрес Мускьетти</td>
+            </tr>
+        </table>
+    </div>
+    <div class="film2">
+        <h2 id="film2">Фильм 2: Звонок</h2>
+        <h3 class="description2"><p>Телефонный звонок следует после просмотра некой загадочной видеокассеты, после чего каждый посмотревший ее умирает. Жертве дается одна неделя, а дальше следует смерть.</p></h3>
+        <ul>
+            <img src="f21.jpeg" alt="Кадр из фильма 2">
+            <img src="f22.jpeg" alt="Кадр из фильма 2">
+            <img src="f23.jpeg" alt="Кадр из фильма 2">
+        </ul>
+        <table>
+            <tr>
+                <td>Год</td>
+                <td>2002</td>
+            </tr>
+            <tr>
+                <td>Страна</td>
+                <td>Сша</td>
+            </tr>
+            <tr>
+                <td>Жанр</td>
+                <td>Ужасы</td>
+            </tr>
+            <tr>
+                <td>Режиссер</td>
+                <td>Гор Вербински</td>
+            </tr>
+        </table>
+    </div>
+    <div class="film3">
+        <h2 id="film3">Фильм 3: Пила 2</h2>
+        <h3 class="description3"><p>Восемь незнакомцев оказываются вынуждены вступить в игру сумасшедшего убийцы, ставками в которой будут их жизни.</p></h3>
+        <ul>
+            <img src="f31.jpeg" alt="Кадр из фильма 3">
+            <img src="f32.jpeg" alt="Кадр из фильма 3">
+            <img src="f33.jpeg" alt="Кадр из фильма 3">
+        </ul>
+        <table>
+            <tr>
+                <td>Год</td>
+                <td>2005</td>
+            </tr>
+            <tr>
+                <td>Страна</td>
+                <td>Сша</td>
+            </tr>
+            <tr>
+                <td>Жанр</td>
+                <td>Ужасы</td>
+            </tr>
+            <tr>
+                <td>Режиссер</td>
+                <td>Даррен Линн Боусман</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
