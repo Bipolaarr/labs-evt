@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="script2.js"></script>
+</head>
+<body>
+    <h1>Свойства flex-box</h1>
+    <h2>flex-direction</h2>
+    <div class="container">
+        <div class="element element_one">1</div>
+        <div class="element element_two">2</div>
+        <div class="element element_three">3</div>
+    </div>
+    <button onclick="setFlexDirection('row')">Row</button>
+    <button onclick="setFlexDirection('row-reverse')">Row-reverse</button>
+    <button onclick="setFlexDirection('column')">Column</button>
+    <button onclick="setFlexDirection('column-reverse')">Column-reverse</button>
+
+    <h2>flex-wrap</h2>
+    <div class="container container_two">
+        <div class="element element_one">1</div>
+        <div class="element element_two">2</div>
+        <div class="element element_three">3</div>
+        <div class="element element_four">4</div>
+    </div>
+    <button onclick="setFlexWrap('wrap')">Wrap</button>
+    <button onclick="setFlexWrap('nowrap')">Nowrap</button>
+    <button onclick="setFlexWrap('wrap-reverse')">Wrap-reverse</button>
+
+    <h3>justify-content</h3>
+    <div class="container container_three">
+        <div class="el element_one">1</div>
+        <div class="el element_two">2</div>
+        <div class="el element_three">3</div>
+        <div class="el element_four">4</div>
+    </div>
+    <button onclick="setJustifyContent('flex-start')">Flex-start</button>
+    <button onclick="setJustifyContent('flex-end')">Flex-end</button>
+    <button onclick="setJustifyContent('center')">Center</button>
+    <button onclick="setJustifyContent('space-between')">Space-between</button>
+    <button onclick="setJustifyContent('space-around')">Space-around</button>
+    <button onclick="setJustifyContent('space-evenly')">Space-evenly</button>
+</body>
+</html>

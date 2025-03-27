@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.element {
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+    width: 40%;
+}
+
+.el {
+    text-align: center;
+    height: 100%;
+    width: 300px;
+}
+
+.element_one {
+    background-color: red;
+}
+
+.element_two {
+    background-color: green;
+}
+
+.element_three {
+    background-color: blue;
+}
+
+.element_four {
+    background-color: yellow;
+}
+
+button {
+    margin-top: 10px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.container_two {
+    display: flex;
+}
+
+.container_three {
+    display: flex;
+}
