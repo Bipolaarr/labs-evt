@@ -1,0 +1,28 @@
+.container {
+    display: grid;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.element {
+    margin: 2px;
+    padding: 10px;
+    text-align: center;
+    background-color: lightblue;
+}
+
+
+button {
+    display: block;
+    margin-top: 10px;
+    background-color: lightblue;
+    border: 2px solid black;
+}
+
+.container_one {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.container_three {
+    grid-template-columns: repeat(3, 1fr);
+}

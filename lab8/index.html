@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="script2.js"></script>
+</head>
+<body>
+    <h1>Grid properties</h1>
+    <h2>display</h2>
+    <span>Текст</span>
+    <div class="container container_one">
+        <div class="element">1</div>
+        <div class="element">2</div>
+        <div class="element">3</div>
+        <div class="element">4</div>
+        <div class="element">5</div>
+        <div class="element">6</div>
+        <div class="element">7</div>
+        <div class="element">8</div>
+        <div class="element">9</div>
+    </div>
+    <button onclick="setDisplay('grid')">Grid</button>
+    <button onclick="setDisplay('inline-grid')">Inline-grid</button>
+    <button onclick="setDisplay('subgrid')">Subgrid</button>
+
+
+    <h2>grid-template-columns</h2>
+    <div class="container container_two">
+        <div class="element">1</div>
+        <div class="element">2</div>
+        <div class="element">3</div>
+        <div class="element">4</div>
+        <div class="element">5</div>
+        <div class="element">6</div>
+        <div class="element">7</div>
+        <div class="element">8</div>
+        <div class="element">9</div>
+    </div>
+    <button onclick="setTemplateColumns('100px 50px 100px')">100px 50px 100px</button>
+    <button onclick="setTemplateColumns('50px 1fr 50px')">50px 1fr 50px</button>
+    <button onclick="setTemplateColumns('repeat(3, 1fr)')">repeat(3, 1fr)</button>
+
+    <h2>grid-template-rows</h2>
+    <div class="container container_three">
+        <div class="element">1</div>
+        <div class="element">2</div>
+        <div class="element">3</div>
+        <div class="element">4</div>
+        <div class="element">5</div>
+        <div class="element">6</div>
+        <div class="element">7</div>
+        <div class="element">8</div>
+        <div class="element">9</div>
+    </div>
+    <button onclick="setTemplateRows('100px 50px 100px')">100px 50px 100px</button>
+    <button onclick="setTemplateRows('50px 1fr 50px')">50px 1fr 50px</button>
+    <button onclick="setTemplateRows('repeat(3, 1fr)')">repeat(3, 1fr)</button>
+
+</body>
+</html>

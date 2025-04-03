@@ -1,0 +1,76 @@
+html {
+    font-family: sans-serif;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  header {
+    background: rgb(52, 206, 142);
+    height: 100px;
+  }
+
+  h1 {
+    text-align: center;
+    color: white;
+    line-height: 100px;
+    margin: 0;
+  }
+
+  article {
+    padding: 10px;
+    margin: 10px;
+    background: rgba(16, 233, 215, 0.178);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-areas: 
+    "first second third third"
+    "first fourth third third"
+    "first fifth sixth seventh"
+    "eighth ninth ninth tenth"
+    ;
+  }
+
+  article:first-child {
+    grid-area: first;
+  }
+
+  article:nth-child(2)  {
+    grid-area: second;
+  }
+
+  article:nth-child(3)  {
+    grid-area: third;
+  }
+
+  article:nth-child(4)  {
+    grid-area: fourth;
+  }
+
+  article:nth-child(5)  {
+    grid-area: fifth;
+  }
+
+  article:nth-child(6)  {
+    grid-area: sixth;
+  }
+
+  article:nth-child(7)  {
+    grid-area: seventh;
+  }
+
+  article:nth-child(8)  {
+    grid-area: eighth;
+  }
+
+  article:nth-child(9)  {
+    grid-area: ninth;
+  }
+
+  article:nth-child(10)  {
+    grid-area: tenth;
+  }
+
