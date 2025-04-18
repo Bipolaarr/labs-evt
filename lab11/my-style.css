@@ -1,0 +1,83 @@
+header {
+    height: 4%;
+	position: fixed;
+	top: 0;
+	background-color: lightblue;
+	width: 100%;
+}
+
+footer {
+    height: 4%;
+	position: fixed;
+	bottom: 0;
+	background-color: lightblue;
+	width: 100%;
+}
+
+body .wrapper {
+	max-width: 100% !important;
+	text-align: center;
+}
+
+aside blockquote.blockquote {
+	font-weight: normal;
+	font-style: italic;
+}
+
+article.article p {
+	font-style: normal !important;
+}
+
+.word {
+	position: sticky;
+	top: 50px;
+	left: 0px;
+	width: 100px;
+}
+
+.word.first {
+	background-color: red;
+}
+.word.second {
+	background-color: blue;
+	left: 100px;
+}
+.word.third {
+	background-color: green;
+	left: 200px;
+}
+.word.fourth {
+	background-color: yellow;
+	left: 300px;
+}
+.word.fifth {
+	background-color: orange;
+	left: 400px;
+}
+
+.article img + p::first-letter {
+	font-size: 2em;
+	color: purple;
+	font-weight: bold;
+}
+
+.article:nth-of-type(odd) img {
+	float: left;
+}
+.article:nth-of-type(even) img {
+	float: right;
+}
+
+.article img {
+	min-height: 150px;
+}
+
+footer a:hover {
+	cursor: default;
+}
+
+footer a {
+	padding: 2px;
+	text-decoration: underline !important;
+	color: #4800ff !important;
+}
