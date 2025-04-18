@@ -51,7 +51,7 @@ Beginner Flutter developer. Looking for possiblities to improve hard and soft sk
   - Frontend with Flutter
   - Firebase Realtime Database
 
-### “Everest - Fintech App” – 2024 December, BSUIR 
+### “Everest - Fintech App” – 2025 April
 
 - Currently developing:
   - Backend with Dart (flutter_stripe, paypal_sdk, pay, encrypt, fl_chart, Plaid techologies used)
