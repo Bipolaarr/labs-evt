@@ -59,7 +59,7 @@ Beginner Flutter developer. Looking for possiblities to improve hard and soft sk
   - Firebase Realtime Database
 
 
-## Образование
+## Education
 
 | Years            | University        | Branch                |
 | ---------------- | ----------------- | --------------------- |
