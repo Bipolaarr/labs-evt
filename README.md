@@ -34,6 +34,7 @@ Beginner Flutter developer. Looking for possiblities to improve hard and soft sk
 - Developed by me:
   - Backend with Java (Core, Spring, Hibernate technologies used)
   - Frontend with HTML, CSS5, JS
+  - MySQL 
 
 ### "Pulse - Streaming App" - 2024 May
 
@@ -47,7 +48,17 @@ Beginner Flutter developer. Looking for possiblities to improve hard and soft sk
 
 - Developed by me:
   - Backend with Dart (just_audio, audio_service, flutter_bloc techologies used)
+  - Frontend with Flutter
   - Firebase Realtime Database
+
+### “Everest - Fintech App” – 2024 December, BSUIR 
+
+- Currently developing:
+  - Backend with Dart (flutter_stripe, paypal_sdk, pay, encrypt, fl_chart, Plaid techologies used)
+  - Frontend with Flutter
+  - Firebase Realtime Database
+
+
 
 ## Образование
 
