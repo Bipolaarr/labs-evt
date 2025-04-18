@@ -27,7 +27,7 @@ Beginner Flutter developer. Looking for possiblities to improve hard and soft sk
 - _Work with APIs and HTTPs_
 - _Git_
 - _Get along with principles, patterns and clean code styles_
-- _English - _B2 Level_
+- _English_ - _B2 Level_
 
 ## Experience
 
