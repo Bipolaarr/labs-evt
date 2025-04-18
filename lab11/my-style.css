@@ -22,6 +22,7 @@ body .wrapper {
 aside blockquote.blockquote {
 	font-weight: normal;
 	font-style: italic;
+    padding-bottom: 50px;
 }
 
 article.article p {
