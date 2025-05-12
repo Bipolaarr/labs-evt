@@ -49,6 +49,41 @@ body {
 }
 
 /* Header Styles */
+
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.burger-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .burger-bar {
+    background-color: var(--dark-text);
+}
+
+.burger-menu.active .burger-bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active .burger-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .burger-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
 header {
     background-color: var(--background-color);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -986,6 +1021,39 @@ td:nth-child(7) {
     .contact-card {
         width: 100%;
     }
+
+    .burger-menu {
+        display: block;
+    }
+    
+    .main-navigation.active {
+        display: block;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-item {
+        width: 100%;
+    }
+    
+    .nav-link {
+        justify-content: center;
+        padding: 12px;
+    }
+    
+    .header-actions {
+        order: 2;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .pagination button {
+        min-width: 70px;
+    }
+    
 }
 
 /* Footer Styles */
@@ -1130,6 +1198,8 @@ footer {
     .stat-item {
         width: calc(50% - 20px);
     }
+
+    
 }
 
 @media (max-width: 480px) {

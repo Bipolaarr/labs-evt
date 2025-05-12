@@ -6,6 +6,8 @@ const prevPageBtn = document.getElementById('prev-page');
 const nextPageBtn = document.getElementById('next-page');
 const pageInfo = document.getElementById('page-info');
 const themeToggle = document.querySelector('.theme-toggle');
+const burgerMenu = document.querySelector('.burger-menu');
+const mainNav = document.querySelector('.main-navigation');
 
 // Global variables
 let currentPage = 1;
@@ -27,6 +29,11 @@ const totalExchangesElement = document.getElementById('total-exchanges');
 const totalMarketCapElement = document.getElementById('total-market-cap');
 const totalVolumeElement = document.getElementById('total-volume');
 const btcDominanceElement = document.getElementById('btc-dominance');
+
+burgerMenu.addEventListener('click', () => {
+    burgerMenu.classList.toggle('active');
+    mainNav.classList.toggle('active');
+});
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
