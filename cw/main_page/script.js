@@ -34,21 +34,22 @@ burgerMenu.addEventListener('click', (e) => {
     e.stopPropagation();
     burgerMenu.classList.toggle('active');
     mainNav.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
 });
 
-// Close menu when clicking outside
 document.addEventListener('click', (e) => {
     if (!mainNav.contains(e.target) && !burgerMenu.contains(e.target)) {
         burgerMenu.classList.remove('active');
         mainNav.classList.remove('active');
+        document.body.classList.remove('menu-open');
     }
 });
 
-// Close menu when clicking on nav items
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         burgerMenu.classList.remove('active');
         mainNav.classList.remove('active');
+        document.body.classList.remove('menu-open');
     });
 });
 

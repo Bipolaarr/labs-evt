@@ -1102,6 +1102,71 @@ footer {
 
 @media (max-width: 768px) {
 
+        .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .header-actions {
+        order: 0;
+        width: auto;
+        gap: 15px;
+    }
+
+    .connect-wallet {
+        width: 100%;
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    /* Расположение элементов бургера и темы */
+    .burger-menu {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .theme-toggle {
+        order: 1;
+    }
+
+    /* Кнопка Connect Wallet под первой строкой */
+    .header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Выравнивание иконки в таблице */
+    .crypto-name {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    /* Пагинация */
+    .pagination {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .pagination button {
+        padding: 12px 20px;
+        min-width: 80px;
+    }
+
+    #page-info {
+        order: -1;
+        flex: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Фикс для бургер меню */
+    .main-navigation {
+        top: calc(100% + 15px);
+    }
+
     .about-hero {
         padding: 60px 20px;
     }
