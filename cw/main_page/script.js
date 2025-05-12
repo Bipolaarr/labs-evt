@@ -30,9 +30,26 @@ const totalMarketCapElement = document.getElementById('total-market-cap');
 const totalVolumeElement = document.getElementById('total-volume');
 const btcDominanceElement = document.getElementById('btc-dominance');
 
-burgerMenu.addEventListener('click', () => {
+burgerMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
     burgerMenu.classList.toggle('active');
     mainNav.classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!mainNav.contains(e.target) && !burgerMenu.contains(e.target)) {
+        burgerMenu.classList.remove('active');
+        mainNav.classList.remove('active');
+    }
+});
+
+// Close menu when clicking on nav items
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        burgerMenu.classList.remove('active');
+        mainNav.classList.remove('active');
+    });
 });
 
 // Initialize the app
