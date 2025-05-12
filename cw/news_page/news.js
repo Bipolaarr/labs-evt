@@ -2,7 +2,9 @@ const NEWS_API_KEY = '37a5a1b6a2aa4bce88fb36928a537a9a'; // Consider using envir
 const newsGrid = document.getElementById('news-grid');
 const loadMoreBtn = document.getElementById('load-more');
 const loadingSpinner = document.getElementById('loading-spinner');
-const themeToggle = document.querySelector('.theme-toggle');
+const themeToggles = document.querySelectorAll('.theme-toggle');
+const burgerMenu = document.querySelector('.burger-menu');
+const mainNav = document.querySelector('.main-navigation');
 
 let currentPage = 1;
 let currentQuery = 'cryptocurrency OR crypto OR blockchain';
@@ -18,6 +20,29 @@ const CRYPTO_SOURCES = [
     'crypto.news'
 ];
 
+burgerMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
+    burgerMenu.classList.toggle('active');
+    mainNav.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+});
+
+document.addEventListener('click', (e) => {
+    if (!mainNav.contains(e.target) && !burgerMenu.contains(e.target)) {
+        burgerMenu.classList.remove('active');
+        mainNav.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
+});
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        burgerMenu.classList.remove('active');
+        mainNav.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    });
+});
+
 // Initialize theme and news
 document.addEventListener('DOMContentLoaded', () => {
     initializeTheme();
@@ -32,7 +57,6 @@ function initializeTheme() {
 }
 
 function setupEventListeners() {
-    themeToggle.addEventListener('click', toggleTheme);
     
     document.getElementById('search-input').addEventListener('input', debounce((e) => {
         currentQuery = `${e.target.value} ${CRYPTO_SOURCES.map(s => `site:${s}`).join(' OR ')}`;
@@ -59,17 +83,25 @@ function setupEventListeners() {
 }
 
 // Theme functions
-function toggleTheme() {
+themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', toggleTheme);
+    });
+
+    function toggleTheme() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
 }
 
+// Update theme icon based on current theme
 function updateThemeIcon(theme) {
-    const icon = themeToggle.querySelector('i');
-    icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    themeToggles.forEach(toggle => {
+        const icon = toggle.querySelector('i');
+        icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    });
 }
 
 // News functions
@@ -81,7 +113,7 @@ async function fetchNews() {
             `q=${encodeURIComponent(currentQuery)}&` +
             `domains=${CRYPTO_SOURCES.join(',')}&` +
             `page=${currentPage}&` +
-            `pageSize=11&` +  // Reduced for better CORS handling
+            `pageSize=15&` +  // Reduced for better CORS handling
             `language=en&` + 
             `sortBy=publishedAt&` +
             `apiKey=${NEWS_API_KEY}`

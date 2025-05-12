@@ -5,8 +5,10 @@ const searchInput = document.getElementById('search-input');
 const prevPageBtn = document.getElementById('prev-page');
 const nextPageBtn = document.getElementById('next-page');
 const pageInfo = document.getElementById('page-info');
-const themeToggle = document.querySelector('.theme-toggle');
+const themeToggles = document.querySelectorAll('.theme-toggle');
 const trustFilter = document.getElementById('trust-filter');
+const burgerMenu = document.querySelector('.burger-menu');
+const mainNav = document.querySelector('.main-navigation');
 
 // Market stats elements
 const totalExchangesElement = document.getElementById('total-exchanges');
@@ -35,11 +37,36 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
 });
 
+burgerMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
+    burgerMenu.classList.toggle('active');
+    mainNav.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+});
+
+document.addEventListener('click', (e) => {
+    if (!mainNav.contains(e.target) && !burgerMenu.contains(e.target)) {
+        burgerMenu.classList.remove('active');
+        mainNav.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
+});
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        burgerMenu.classList.remove('active');
+        mainNav.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    });
+});
+
 // Set up event listeners
 function setupEventListeners() {
-    // Theme toggle
-    themeToggle.addEventListener('click', toggleTheme);
 
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', toggleTheme);
+    });
+    // Theme toggle
     // Search functionality
     searchInput.addEventListener('input', () => {
         filterExchanges();
@@ -91,7 +118,11 @@ function setupEventListeners() {
 }
 
 // Toggle between light and dark theme
-function toggleTheme() {
+themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', toggleTheme);
+    });
+
+    function toggleTheme() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     
@@ -102,8 +133,10 @@ function toggleTheme() {
 
 // Update theme icon based on current theme
 function updateThemeIcon(theme) {
-    const icon = themeToggle.querySelector('i');
-    icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    themeToggles.forEach(toggle => {
+        const icon = toggle.querySelector('i');
+        icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    });
 }
 
 // Fetch global market data

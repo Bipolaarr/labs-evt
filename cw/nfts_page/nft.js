@@ -5,7 +5,9 @@ const searchInput = document.getElementById('search-input');
 const prevPageBtn = document.getElementById('prev-page');
 const nextPageBtn = document.getElementById('next-page');
 const pageInfo = document.getElementById('page-info');
-const themeToggle = document.querySelector('.theme-toggle');
+const themeToggles = document.querySelectorAll('.theme-toggle');
+const burgerMenu = document.querySelector('.burger-menu');
+const mainNav = document.querySelector('.main-navigation');
 
 // Global variables
 let currentPage = 1;
@@ -28,6 +30,50 @@ document.addEventListener('DOMContentLoaded', () => {
     generateMockData();
     setupEventListeners();
 });
+
+burgerMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
+    burgerMenu.classList.toggle('active');
+    mainNav.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+});
+
+document.addEventListener('click', (e) => {
+    if (!mainNav.contains(e.target) && !burgerMenu.contains(e.target)) {
+        burgerMenu.classList.remove('active');
+        mainNav.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
+});
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        burgerMenu.classList.remove('active');
+        mainNav.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    });
+});
+
+themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', toggleTheme);
+    });
+
+    function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+}
+
+// Update theme icon based on current theme
+function updateThemeIcon(theme) {
+    themeToggles.forEach(toggle => {
+        const icon = toggle.querySelector('i');
+        icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    });
+}
 
 function generateMockData() {
     loadingSpinner.classList.add('active');

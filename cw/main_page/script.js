@@ -5,7 +5,7 @@ const searchInput = document.getElementById('search-input');
 const prevPageBtn = document.getElementById('prev-page');
 const nextPageBtn = document.getElementById('next-page');
 const pageInfo = document.getElementById('page-info');
-const themeToggle = document.querySelector('.theme-toggle');
+const themeToggles = document.querySelectorAll('.theme-toggle');
 const burgerMenu = document.querySelector('.burger-menu');
 const mainNav = document.querySelector('.main-navigation');
 
@@ -71,7 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // Set up event listeners
 function setupEventListeners() {
     // Theme toggle
-    themeToggle.addEventListener('click', toggleTheme);
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', toggleTheme);
+    });
 
     // Search functionality
     searchInput.addEventListener('input', () => {
@@ -127,8 +129,10 @@ function toggleTheme() {
 
 // Update theme icon based on current theme
 function updateThemeIcon(theme) {
-    const icon = themeToggle.querySelector('i');
-    icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    themeToggles.forEach(toggle => {
+        const icon = toggle.querySelector('i');
+        icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    });
 }
 
 // Fetch global market data

@@ -10,13 +10,21 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">
-                <h1>Coinspect.</h1>
+            <div class="header-top">
+                <div class="logo">
+                    <h1>Coinspect.</h1>
+                </div>
+                <button class="theme-toggle desktop"><i class="fas fa-moon"></i></button>
+                <button class="burger-menu">
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                </button>
             </div>
             <nav class="main-navigation">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="../main_page/index.html" class="nav-link">
                             <i class="fas fa-coins"></i>
                             <span>Cryptocurrencies</span>
                         </a>
@@ -48,8 +56,8 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <button class="theme-toggle"><i class="fas fa-moon"></i></button>
-                <button class="connect-wallet">Connect Wallet</button>
+                <button class="theme-toggle "><i class="fas fa-moon"></i></button>
+                <!-- <button class="connect-wallet">Connect Wallet</button> -->
             </div>
         </div>
     </header>
@@ -65,6 +73,7 @@
 
     <div class="container">
         <section class="about-content">
+            <div class="about-filler"></div>
             <div class="section-title">
                 <h2>Our Story</h2>
             </div>
@@ -231,8 +240,10 @@
     document.addEventListener('DOMContentLoaded', function() {
         // ===== THEME TOGGLE =====
                         
-        const themeToggle = document.querySelector('.theme-toggle');    
+        const themeToggles = document.querySelectorAll('.theme-toggle');   
         const body = document.body;
+        const burgerMenu = document.querySelector('.burger-menu');
+        const mainNav = document.querySelector('.main-navigation');
         
         // Check for saved theme preference
         const savedTheme = localStorage.getItem('theme') || 'light';
@@ -246,23 +257,54 @@
                 icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
             }
         }
-    
+
+        burgerMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            burgerMenu.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !burgerMenu.contains(e.target)) {
+                burgerMenu.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+            
         // Set initial icon
         updateThemeIcon(savedTheme);
         
         // Toggle theme function
-        function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        }
-        
-        // Add event listener if toggle exists
-        if (themeToggle) {
-            themeToggle.addEventListener('click', toggleTheme);
-        }
+        themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', toggleTheme);
+    });
+
+    function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+}
+
+// Update theme icon based on current theme
+function updateThemeIcon(theme) {
+    themeToggles.forEach(toggle => {
+        const icon = toggle.querySelector('i');
+        icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    });
+}
     
         // ===== CAROUSEL =====
         const carousel = document.getElementById('imageCarousel');
