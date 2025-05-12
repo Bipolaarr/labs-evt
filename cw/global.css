@@ -112,6 +112,7 @@ header .container {
 
 .main-navigation {
     position: relative;
+    display: block;
 }
 
 .nav-list {
@@ -1023,7 +1024,7 @@ td:nth-child(7) {
     }
 
     .burger-menu {
-        display: block;
+        display: none;
     }
     
     .main-navigation.active {
@@ -1156,6 +1157,24 @@ footer {
 /* Responsive Styles */
 
 @media (max-width: 768px) {
+
+    .main-navigation {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--background-color);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 0 20px;
+    }
+
+     .main-navigation.active {
+        display: block !important;
+        animation: slideDown 0.3s ease;
+    }
+
     header .container {
         flex-direction: column;
         gap: 15px;
