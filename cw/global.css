@@ -1110,9 +1110,10 @@ footer {
     }
 
     .header-actions {
-        order: 0;
-        width: auto;
+        display: flex;
         gap: 15px;
+        order: 2;
+        margin-left: auto;
     }
 
     .connect-wallet {
