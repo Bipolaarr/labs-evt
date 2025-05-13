@@ -1226,7 +1226,7 @@ footer {
         display: none;
         position: absolute;
         right: 10px;
-        top: 65px;
+        top: 6px;
         width: 240px;
         height: 270px;
         background: var(--background-color);
